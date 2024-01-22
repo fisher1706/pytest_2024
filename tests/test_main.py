@@ -1,6 +1,6 @@
 # https://www.youtube.com/watch?v=jsrxqoVasyw&list=PLeLN0qH0-mCVdHgdjlnKTl4jKuJgCK-4b&index=11
 
-# TODO: pytest --browser=firefox - use addoption or pytesr --run-slow=True
+# TODO: pytest --browser=firefox - use addoption or pytest --run-slow=False
 
 import time
 
@@ -24,7 +24,7 @@ def test_slow():
 
 def test_one():
     print("\ntest_one")
-    time.sleep()
+    time.sleep(1)
 
 
 def test_two():
