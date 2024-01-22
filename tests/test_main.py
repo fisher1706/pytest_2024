@@ -1,38 +1,19 @@
-# https://www.youtube.com/watch?v=OIvZ0oHl7rA&list=PLeLN0qH0-mCVdHgdjlnKTl4jKuJgCK-4b&index=7
-
+# https://www.youtube.com/watch?v=zc138SwDsG0&list=PLeLN0qH0-mCVdHgdjlnKTl4jKuJgCK-4b&index=9
 import pytest
-from src.main import Calculator
+from src.config import settings
+
+# TODO: 1 - use "pytest.ini" - env_files = test.env or command: pytest --envfile .test.env - use: pytest-dotenv
 
 
-@pytest.fixture()
-def fixture_one():
-    print("\ntext_one")
+@pytest.fixture(
+    scope="session",
+    autouse=True
+)
+def setup_db():
+    print(f"\n{settings.MODE}")
     return "text_one"
 
 
-@pytest.fixture()
-def fixture_two():
-    print("\ntext_two")
-    return "text_two"
-
-
-@pytest.mark.usefixtures("fixture_one", "fixture_two")
-class TestCalculator:
-    @pytest.mark.parametrize(
-        "x, y, res",
-        [
-            (1, 2, 0.5),
-        ]
-    )
-    def test_divide(self, x, y, res):
-        assert Calculator().divide(x, y) == res
-
-    @pytest.mark.parametrize(
-        "x, y, res",
-        [
-            (1, 1, 2),
-            (5, -1, 4)
-        ]
-    )
-    def test_add(self, x, y, res):
-        assert Calculator().add(x, y) == res
+class TestSomething:
+    def test_something(self):
+        assert True
