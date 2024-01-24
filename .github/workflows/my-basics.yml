@@ -34,7 +34,6 @@ jobs:
       - name: List Current Folder After
         run: ls -la
 
-	  
   my_deploy:
     runs-on: ubuntu-latest
     needs: my_testing
