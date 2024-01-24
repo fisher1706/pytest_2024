@@ -5,7 +5,7 @@
 name: My-GitHubAction-Basics
 env:
   APPLICATION_NAME: "My Pytest"
-  DEPLOY_PACKAGE_NAME: "pytest-deploy-ver-${{ gitnub.sha }}"
+  DEPLOY_PACKAGE_NAME: "pytest-deploy-ver-${{ github.sha }}"
   
 
 on:
