@@ -1,0 +1,23 @@
+#-------------------------
+# test
+#-------------------------
+
+name: My-GitHunAction-Basics
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello World From Testing job"
+
+  my_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello World From Deploy job"
