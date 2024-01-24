@@ -4,13 +4,13 @@ from src.config import settings
 # TODO: 1 - use "pytest.ini" - env_files = test.env or command: pytest --envfile .test.env - use: pytest-dotenv
 
 
-@pytest.fixture(
-    scope="session",
-    autouse=True
-)
-def setup_db():
-    print(f"\n{settings.MODE}")
-    return "text_one"
+# @pytest.fixture(
+#     scope="session",
+#     autouse=True
+# )
+# def setup_db():
+#     print(f"\n{settings.MODE}")
+#     return "text_one"
 
 
 @pytest.fixture()
