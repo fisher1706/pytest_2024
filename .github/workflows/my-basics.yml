@@ -19,13 +19,23 @@ jobs:
     steps:
       - name: Print Hello Message In Testing
         run: echo "Hello World From Testing job"
+        
       - name: Execute few command
         run: |
           echo "Print Message One"
           echo "Print Message Two"
           echo "Application name: ${{ env.APPLICATION_NAME }}"
+          
       - name: List Current Folder
         run: ls -la
+        
+      - name: Git clone my repo
+        uses: action/checkout@1
+
+      - name: List Current Folder
+        run: ls -la
+      
+        
 
   my_deploy:
     runs-on: ubuntu-latest
