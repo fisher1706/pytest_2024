@@ -2,7 +2,7 @@
 # My-GitHunAction-Basics
 #-------------------------
 
-name: My-GitHunAction-Basics
+name: My-GitHubAction-Basics
 
 on:
   push:
