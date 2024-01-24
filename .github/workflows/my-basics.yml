@@ -3,6 +3,10 @@
 #-------------------------
 
 name: My-GitHubAction-Basics
+env:
+  APPLICATION_NAME: "My Pytest"
+  DEPLOY_PACKAGE_NAME: "pytest-deploy-ver-${{ gitnub.sha }}"
+  
 
 on:
   push:
@@ -15,6 +19,11 @@ jobs:
     steps:
       - name: Print Hello Message In Testing
         run: echo "Hello World From Testing job"
+      - name: Execute few command
+        run: |
+          echo "Print Message One"
+          echo "Print Message Two"
+          echo "Application name: $ {{ env.APPLICATION_NAME }}"
 
   my_deploy:
     runs-on: ubuntu-latest
@@ -22,3 +31,6 @@ jobs:
     steps:
       - name: Print Hello Message In Deploy
         run: echo "Hello World From Deploy job"
+
+      - name: Print Deployment Package
+        run: echo "Deploy package name is $ {{ env.DEPLOY_PACKAGE_NAME }}"
