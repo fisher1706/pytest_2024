@@ -1,6 +1,7 @@
 #-------------------------
 # My-GitHubAction-Basics
 #-------------------------
+
 name: My-GitHubAction-Basics
 env:
   APPLICATION_NAME: "My Pytest"
@@ -55,7 +56,7 @@ jobs:
           echo "VAR_2 = ${{ env.VAR_2 }}
           echo "VAR_3 = $LOCAL_VAR"
         env: 
-          LOCAL_VAR: "This Is Super Local Enviroment Variable"
+          LOCAL_VAR: "This Is Super Local Environment Variable"
 
       - name: Print Deployment Package
         run: echo "Deploy package name is ${{ env.DEPLOY_PACKAGE_NAME }}"
@@ -65,6 +66,3 @@ jobs:
 
       - name: Lets Tests Same Packages If They Are Here Two
         run: zip --version
-
-        
- 
