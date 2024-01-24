@@ -1,5 +1,5 @@
 import pytest
-from src.config import settings
+# from src.config import settings
 
 # TODO: 1 - use "pytest.ini" - env_files = test.env or command: pytest --envfile .test.env - use: pytest-dotenv
 
