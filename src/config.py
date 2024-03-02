@@ -23,7 +23,7 @@ class PydanticSettings(BaseSettings):
     DB_NAME: str
 
     @property
-    def DB_URL(self):
+    def db_url(self):
         return f"postgresql+psycopg2://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     model_config = SettingsConfigDict(env_file=".env")
@@ -38,7 +38,7 @@ class PydanticSettingsConfig(BaseSettings):
     DB_NAME: str
 
     @property
-    def DB_URL(self):
+    def db_url(self):
         return f"postgresql+psycopg2://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     class Config:
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print(sl.DB_URL)
 
     pc = PydanticSettingsConfig()
-    print(pc.DB_URL)
+    print(pc.db_url)
 
     ps = PydanticSettings()
-    print(ps.DB_URL)
+    print(ps.db_url)
